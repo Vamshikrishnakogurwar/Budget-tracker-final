@@ -18,27 +18,6 @@ interface TransactionFormProps {
   onClose: () => void;
 }
 
-const incomeCategories = [
-  'Salary',
-  'Freelance',
-  'Investment',
-  'Business',
-  'Gift',
-  'Other'
-];
-
-const expenseCategories = [
-  'Rent',
-  'Groceries',
-  'Utilities',
-  'Transportation',
-  'Entertainment',
-  'Healthcare',
-  'Education',
-  'Shopping',
-  'Dining',
-  'Other'
-];
 
 export const TransactionForm = ({ onSubmit, onClose }: TransactionFormProps) => {
   const [type, setType] = useState<'income' | 'expense'>('expense');
@@ -67,7 +46,6 @@ export const TransactionForm = ({ onSubmit, onClose }: TransactionFormProps) => 
     setDate(new Date().toISOString().split('T')[0]);
   };
 
-  const categories = type === 'income' ? incomeCategories : expenseCategories;
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
@@ -114,18 +92,13 @@ export const TransactionForm = ({ onSubmit, onClose }: TransactionFormProps) => 
 
             <div>
               <Label htmlFor="category">Category</Label>
-              <Select value={category} onValueChange={setCategory}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a category" />
-                </SelectTrigger>
-                <SelectContent>
-                  {categories.map((cat) => (
-                    <SelectItem key={cat} value={cat}>
-                      {cat}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Input
+                id="category"
+                placeholder={`Enter ${type} category (e.g., ${type === 'income' ? 'Salary, Freelance, Investment' : 'Rent, Groceries, Transportation'})`}
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                required
+              />
             </div>
 
             <div>
