@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle, DollarSign, TrendingUp, TrendingDown, PieChart } from "lucide-react";
 import { TransactionForm } from "./TransactionForm";
 import { TransactionList } from "./TransactionList";
-import { BudgetOverview } from "./BudgetOverview";
 import { ExpenseChart } from "./ExpenseChart";
 
 interface Transaction {
@@ -130,8 +129,6 @@ const Dashboard = () => {
                 <ExpenseChart transactions={transactions} />
               </CardContent>
             </Card>
-
-            <BudgetOverview transactions={transactions} />
           </div>
 
           {/* Right Column */}
