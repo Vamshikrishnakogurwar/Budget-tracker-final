@@ -56,7 +56,7 @@ export const ExpenseChart = ({ transactions }: ExpenseChartProps) => {
         <div className="bg-card border border-border rounded-lg shadow-card p-3">
           <p className="font-medium">{data.name}</p>
           <p className="text-primary">
-            ${data.value.toLocaleString()}
+            ₹{data.value.toLocaleString()}
           </p>
         </div>
       );

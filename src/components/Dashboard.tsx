@@ -66,7 +66,7 @@ const Dashboard = () => {
               <TrendingUp className="h-4 w-4 text-success" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-success">${totalIncome.toLocaleString()}</div>
+              <div className="text-2xl font-bold text-success">₹{totalIncome.toLocaleString()}</div>
               <p className="text-xs text-muted-foreground">+12% from last month</p>
             </CardContent>
           </Card>
@@ -77,7 +77,7 @@ const Dashboard = () => {
               <TrendingDown className="h-4 w-4 text-destructive" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-destructive">${totalExpenses.toLocaleString()}</div>
+              <div className="text-2xl font-bold text-destructive">₹{totalExpenses.toLocaleString()}</div>
               <p className="text-xs text-muted-foreground">+5% from last month</p>
             </CardContent>
           </Card>
@@ -89,7 +89,7 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent>
               <div className={`text-2xl font-bold ${netIncome >= 0 ? 'text-success' : 'text-destructive'}`}>
-                ${netIncome.toLocaleString()}
+                ₹{netIncome.toLocaleString()}
               </div>
               <p className="text-xs text-muted-foreground">
                 {netIncome >= 0 ? 'Positive' : 'Negative'} cash flow

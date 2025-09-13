@@ -70,7 +70,7 @@ export const BudgetOverview = ({ transactions }: BudgetOverviewProps) => {
                     <AlertTriangle className="h-4 w-4 text-destructive" />
                   )}
                   <span className="text-sm">
-                    ${spent.toLocaleString()} / ${limit.toLocaleString()}
+                    ₹{spent.toLocaleString()} / ₹{limit.toLocaleString()}
                   </span>
                 </div>
               </div>
@@ -88,8 +88,8 @@ export const BudgetOverview = ({ transactions }: BudgetOverviewProps) => {
                 <span>{percentage.toFixed(1)}% used</span>
                 <span>
                   {status === 'over' 
-                    ? `$${(spent - limit).toLocaleString()} over budget`
-                    : `$${(limit - spent).toLocaleString()} remaining`
+                    ? `₹${(spent - limit).toLocaleString()} over budget`
+                    : `₹${(limit - spent).toLocaleString()} remaining`
                   }
                 </span>
               </div>

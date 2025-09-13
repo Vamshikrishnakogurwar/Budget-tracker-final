@@ -72,7 +72,7 @@ export const TransactionList = ({ transactions, onDelete }: TransactionListProps
                 <span className={`font-semibold ${
                   transaction.type === 'income' ? 'text-success' : 'text-destructive'
                 }`}>
-                  {transaction.type === 'income' ? '+' : '-'}${transaction.amount.toLocaleString()}
+                  {transaction.type === 'income' ? '+' : '-'}₹{transaction.amount.toLocaleString()}
                 </span>
                 <Button
                   variant="ghost"
